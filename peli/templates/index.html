@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <!-- css tiedostoon yhdistäminen -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/tyyli.css') }}">
+
+    <!-- favicon ongelman ratkaisu -->
+    <link rel="icon" href="data:;base64,=">
+
+</head>
+<body onload="setTimeout(uusiAlku, 6000);">
+
+
+    <!-- kangaksen määrittely -->
+    <canvas id="kangas" style="border:1px solid #000000;"></canvas>
+
+
+    <!-- nappulat -->
+    <button type="button" id="terveysasema" onclick="avaaValintaIkkuna()">SoTe</button>
+    <div id="kuvaus">
+        <h3>Terveysasema</h3><br>Autamme sinua erilaisissa terveydentilaasi liittyvissä asioissa.
+    </div>
+
+    <button type="button" id="kayttoliittyma" onclick="desk()">kotiin</button>
+    <button type="button" id="kayttoliittyma2" onclick="desk()">kotiin</button>
+    <button type="button" id="kayttoliittyma3" onclick="desk()">kotiin</button>
+    <button type="button" id="uloskarttaan" onclick="openMap()">karttaan</button>
+    <img draggable="false" ondragstart="return false"; id="testinappula" src="/static/img/testbutton.png">
+    <img draggable="false" ondragstart="return false"; id="sulkemisnamiska" src="/static/img/closingbutton.png" onclick="suljeValintaIkkuna()">
+    <img draggable="false" ondragstart="return false"; id="sulkemisnamiska2" src="/static/img/closingbutton2.png" onclick="closeUi()">
+    <img draggable="false" ondragstart="return false"; id="sulkemisnamiska3" src="/static/img/closingbutton3.png" onclick="closeLaakari()">
+    <img draggable="false" ondragstart="return false"; id="sulkemisnamiska4" src="/static/img/closingbutton4.png" onclick="suljeKortti()">
+    <img draggable="false" ondragstart="return false"; id="kannettava" src="/static/img/kannettava.png">
+    <img draggable="false" ondragstart="return false"; id="kortti" src="/static/img/kortti.png" onclick="saavutusKortti()">
+    <img draggable="false" ondragstart="return false"; id="asetukset" src="/static/img/settingsicon.png">
+    <img draggable="false" ondragstart="return false"; id="assistant" src="/static/img/assistant.png">
+    <img draggable="false" ondragstart="return false"; id="tallennus" src="/static/img/savingicon.png">
+    <img draggable="false" ondragstart="return false"; id="radio" src="/static/img/radioicon.png">
+
+    <!-- ui komennot -->
+    <button type="button" id="kylla">kyllä</button>
+    <button type="button" id="ei">ei</button>
+    <button type="button" id="kylla2">kyllä</button>
+    <button type="button" id="ei2">ei</button>
+
+
+    <div id="tilannevalinta">
+        <input type="button" id="tyonhakija" value="Työnhakija" onclick="ika()"></input>
+        <input type="button" id="tyonantaja" value="Työnantaja" onclick="ika()"></input>
+        <input type="button" id="asiantuntija" value="Asiantuntija" onclick="ika()"></input>
+    </div>
+
+    <div id="ikavalinta">
+        <input type="button" id="ryhma2534" value="25-34" onclick="paikkakunta()"></input>
+        <input type="button" id="ryhma3544" value="35-44" onclick="paikkakunta()"></input>
+        <input type="button" id="ryhma4554" value="45-54" onclick="paikkakunta()"></input>
+    </div>
+
+    <div id="pkuntavalinta">
+        <input type="button" id="sipoo" value="Sipoo" onclick="status()"></input>
+        <input type="button" id="porvoo" value="Porvoo" onclick="status()"></input>
+        <input type="button" id="orimattila" value="Orimattila" onclick="status()"></input>
+    </div>
+
+    <div id="statusvalinta">
+        <label for="hstatus" id="statuslabeli">"Valitse" ei kelpaa valinnaksi!</label>
+        <select name="hstatus" id="hstatus">
+            <option value="valitse">Valitse</option>
+            <option value="työtön">Työtön</option>
+            <option value="opiskelija">Opiskelija</option>
+            <option value="työssä">Työssä</option>
+        </select>
+        <input id="statusinput" type="submit" value="submit">
+    </div>
+
+
+    <p id="dialogiteksti">testi1</p>
+    <p id="dialogiteksti2">testi2</p>
+
+    <div id="valintaikkuna2">
+        <h1>Sairaanhoitaja</h1>
+        <button type="button" id="valintaShoitaja" >Valitse</button>
+        <button type="button" id="poistaValintaShoitaja" >Poista valinta</button>
+        <button type="button" id="mene" onclick="openUi()">mene</button>
+    </div>
+
+    <div id="valintaikkuna3">
+        <h1>Lääkäri</h1>
+        <button type="button" id="valintaLaakari" >Valitse</button>
+        <button type="button" id="poistaValintaLaakari" >Poista valinta</button>
+        <button type="button" id="mene" onclick="avaalaakari()">mene</button>
+    </div>
+
+    <h1 id="valmisteksti">Valmis</h1>
+
+    <h1 id="presentaatio">Boudissa & Tapaninen Entertainment<br> presents..</h1>
+
+    <script src="{{url_for('static', filename='js/mekaniikka.js')}}"></script>
+
+    <div id="pelinaloitus">
+        <h1 id="gametitle">Game_Z</h1>
+
+        <p id="uusipeli" onclick="uusiPeli()">Uusi Peli</p>
+
+        <p id="lataapeli" onclick="lataaPeli()">Lataa Peli</p>
+    </div>
+
+    <h2 id="loadingnewgame">Aloitetaan uutta peliä..</h2>
+
+    <h2 id="lataaPeliTitle">Lataa peli</h2>
+
+    <p id="syotakoodi">Syötä koodi, jonka sait tallennettuasi pelin</p>
+
+    <input type="text" id="savecode" name="koodi" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" maxlength="5">
+
+    <p id="takaisinalkuun" onclick="StartingScreen()">Takaisin</p>
+
+    <p id="assistantpuhe">Tervetuloa pelamaan tätä <br> peliä</p>
+
+    <img id="assistantpuhekupla" src="/static/img/assistantpuhekupla.png">
+
+    <div id="seuraavaOverlay" onclick="seuraavaDialogi()"></div>
+    <div id="sulkevaOverlay" onclick="suljedialogi()"></div>
+    <div id="suljelomakeOverlay" onclick="suljeLomake()"></div>
+
+    <div id="suljeSaavutusKorttiOverlay" onclick="suljeKortti()"></div>
+
+
+    <img id="kannettavaLomake" src="/static/img/kannettavaiso.png">
+
+    <img id="saavutuskortti" src="/static/img/saavutuskortti.png">
+
+    <img id="empty1" src="/static/img/empty1.png">
+    <img id="empty2" src="/static/img/empty1.png">
+
+    <div id="suljeValintaIkkunaOverlay" onclick="suljeValintaIkkuna()"></div>
+
+    <div id="valintaboksiTausta"></div>
+</body>
+</html>

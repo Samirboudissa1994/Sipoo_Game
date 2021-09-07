@@ -1,0 +1,955 @@
+        body {
+            user-select: none;
+            width:  100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        html {
+            cursor: url('/static/img/pointteri.png'), auto;
+            width:  100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        input, select, option, button {
+            cursor: url('/static/img/pointteri.png'), auto;
+        }
+
+        #presentaatio {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            top:200px;
+            left:50px;
+            color: white;
+            display:none;
+            z-index: 1;
+            text-align: center;
+            animation-name: fadeInOut;
+            animation-duration: 5s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInOut{
+            50%{
+                opacity: 1;
+            }
+        }
+
+        #valmisteksti {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            top:210px;
+            left:280px;
+            color: white;
+            display:none;
+            z-index: 1;
+            animation-name: fadeOut;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeOut{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+        #terveysasema {
+            position:absolute;
+            top:100px;
+            left:500px;
+            width:relative;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+        #kuvaus {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 150px;
+            top: 170px;
+            left: 365px;
+            z-index: 2;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+
+        }
+
+        #terveysasema:hover + #kuvaus {
+            display:block;
+            animation-name: fadeIn;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+
+        #kayttoliittyma {
+            position:absolute;
+            top:40px;
+            left:30px;
+            width:relative;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+        #kayttoliittyma2 {
+            position:absolute;
+            top:40px;
+            left:580px;
+            width:relative;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+        #kayttoliittyma3 {
+            position:absolute;
+            top:40px;
+            left:580px;
+            width:relative;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+
+        #ei {
+            position:absolute;
+            top:440px;
+            left:360px;
+            width:50px;
+            height:50px;
+            font-size: 15px;
+            z-index: 4;
+            display: none;
+        }
+
+        #kylla {
+            position:absolute;
+            top:440px;
+            left:230px;
+            width:50px;
+            height:50px;
+            font-size: 15px;
+            z-index: 4;
+            display: none;
+
+
+        }
+
+        #ei2 {
+            position:absolute;
+            top:440px;
+            left:360px;
+            width:50px;
+            height:50px;
+            font-size: 15px;
+            z-index: 4;
+            display: none;
+        }
+
+        #kylla2 {
+            position:absolute;
+            top:440px;
+            left:230px;
+            width:50px;
+            height:50px;
+            font-size: 15px;
+            z-index: 4;
+            display: none;
+
+
+        }
+
+        #ui {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 300px;
+            top: 90px;
+            left: 190px;
+            border:1px solid #000000;
+            z-index: 2;
+            display: none;
+        }
+
+        #kangas {
+            position: absolute;
+            z-index: 1;
+        }
+
+        #uloskarttaan {
+            position:absolute;
+            top:300px;
+            left:520px;
+            width:relative;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+
+        #asiantuntija {
+            position:absolute;
+            top:270px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #tyonantaja {
+            position:absolute;
+            top:210px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #tyonhakija {
+            position:absolute;
+            top:150px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #ryhma4554 {
+            position:absolute;
+            top:270px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #ryhma3544 {
+            position:absolute;
+            top:210px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #ryhma2534 {
+            position:absolute;
+            top:150px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+
+        #orimattila {
+            position:absolute;
+            top:270px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #sipoo{
+            position:absolute;
+            top:210px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #porvoo {
+            position:absolute;
+            top:150px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #hstatus{
+            position:absolute;
+            top:210px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+            cursor: url('/static/img/pointteri.png'), auto;
+        }
+
+        #statusinput {
+            position:absolute;
+            top:270px;
+            left:230px;
+            width:200px;
+            height:50px;
+            font-size: 15px;
+            z-index: 1;
+        }
+
+        #statuslabeli {
+            font-family: Arial, Helvetica, sans-serif;
+            position:absolute;
+            display:none;
+            color: red;
+            z-index: 1;
+            top: 225px;
+            left:20px;
+        }
+
+        #tilannevalinta {
+            display:none;
+        }
+
+        #ikavalinta {
+            display:none;
+        }
+
+        #pkuntavalinta {
+            display:none;
+        }
+
+        #statusvalinta {
+            display:none;
+            cursor: url('/static/img/pointteri.png'), auto;
+        }
+
+        #valintaikkuna {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 150px;
+            top: 120px;
+            left: 365px;
+            z-index: 2;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #valintaikkuna2 {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 150px;
+            top: 120px;
+            left: 50px;
+            z-index: 2;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #valintaikkuna3 {
+            position: absolute;
+            background-color: white;
+            width: 250px;
+            height: 150px;
+            top: 120px;
+            left: 365px;
+            z-index: 2;
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #testinappula {
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            top: 36px;
+            display:none;
+            left: 360px;
+            z-index: 2;
+        }
+
+        #testinappula:hover{
+            opacity: 0.90;
+        }
+
+        #testinappula:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #sulkemisnamiska{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 30px;
+            left: 590px;
+            z-index: 1;
+        }
+
+        #sulkemisnamiska:hover{
+            opacity: 0.95;
+        }
+
+        #sulkemisnamiska:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #sulkemisnamiska2{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 40px;
+            left: 590px;
+            z-index: 1;
+        }
+
+        #sulkemisnamiska2:hover{
+            opacity: 0.95;
+        }
+
+        #sulkemisnamiska2:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #sulkemisnamiska3{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 40px;
+            left: 590px;
+            z-index: 1;
+        }
+
+        #sulkemisnamiska3:hover{
+            opacity: 0.95;
+        }
+
+        #sulkemisnamiska3:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #sulkemisnamiska4{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 40px;
+            left: 590px;
+            z-index: 1;
+        }
+
+        #sulkemisnamiska4:hover{
+            opacity: 0.95;
+        }
+
+        #sulkemisnamiska4:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+
+        #dialogiteksti {
+            position:absolute;
+            top:70px;
+            left:150px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+        #dialogiteksti2 {
+            position:absolute;
+            top:70px;
+            left:150px;
+            font-size: 15px;
+            z-index: 1;
+            display:none;
+        }
+
+
+        #kannettava{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 350px;
+            left: 200px;
+            z-index: 1;
+        }
+
+        #kannettava:hover{
+            opacity: 0.95;
+        }
+
+        #kannettava:active{
+            opacity: 0.9;
+            -webkit-user-drag:none;
+        }
+
+
+        #kortti{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 40px;
+            left: 550px;
+            z-index: 1;
+        }
+
+        #kortti:hover{
+            opacity: 0.95;
+        }
+
+        #kortti:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #asetukset{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 40px;
+            left: 30px;
+            z-index: 1;
+        }
+
+        #asetukset:hover{
+            opacity: 0.95;
+        }
+
+        #asetukset:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #tallennus{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 110px;
+            left: 30px;
+            z-index: 1;
+        }
+
+        #tallennus:hover{
+            opacity: 0.95;
+        }
+
+        #tallennus:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+
+        #radio{
+            cursor: url('/static/img/pointteri.png'), auto;
+            border: none;
+            outline:none;
+            position:absolute;
+            display:none;
+            top: 180px;
+            left: 30px;
+            z-index: 1;
+        }
+
+        #radio:hover{
+            opacity: 0.95;
+        }
+
+        #radio:active{
+            opacity: 0.7;
+            -webkit-user-drag:none;
+        }
+
+        #gametitle{
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            top:100px;
+            left:220px;
+            color: black;
+            display:none;
+            z-index: 1;
+            animation-name: fadeIn;
+            animation-duration: 0.7s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+
+        #uusipeli {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:250px;
+            left:220px;
+            color: black;
+            display:none;
+            z-index: 1;
+        }
+
+        #uusipeli:hover{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeIn;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        #uusipeli:active{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeOut;
+            animation-duration: 0.1s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeOut{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+        #lataapeli {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:250px;
+            left:330px;
+            color: black;
+            display:none;
+            z-index: 1;
+        }
+
+        #lataapeli:hover{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeIn;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        #lataapeli:active{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeOut;
+            animation-duration: 0.1s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeOut{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+        #loadingnewgame {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:320px;
+            left:215px;
+            color: black;
+            display:none;
+            z-index: 1;
+        }
+
+        #lataaPeliTitle {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+            top:50px;
+            left:240px;
+            color: black;
+            display:none;
+            z-index: 1;
+        }
+
+        #syotakoodi{
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:100px;
+            left:150px;
+            color: black;
+            display:none;
+            z-index: 1;
+        }
+
+        #savecode{
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:250px;
+            left:150px;
+            display:none;
+            z-index: 1;
+        }
+
+        #takaisinalkuun {
+            position:absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            top:350px;
+            left:150px;
+            display:none;
+            color: black;
+            z-index: 1;
+        }
+
+        #takaisinalkuun:hover{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeIn;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        #takaisinalkuun:active{
+            text-shadow: 2px 2px 10px black;
+            animation-name: fadeOut;
+            animation-duration: 0.1s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeOut{
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+
+        #assistant {
+            border: none;
+            outline:none;
+            position:absolute;
+            top: 400px;
+            left: 570px;
+            display:none;
+
+            z-index: 1;
+        }
+
+        #assistantpuhe {
+            position:absolute;
+            top:290px;
+            left:400px;
+            font-size: 12px;
+            z-index: 2;
+            display:none;
+        }
+
+        #assistantpuhekupla {
+            border: none;
+            outline:none;
+            position:absolute;
+            top: 260px;
+            left: 350px;
+            display:none;
+
+            z-index: 1;
+        }
+
+
+        #poistaValintaLaakari{
+            display:none;
+        }
+
+        #poistaValintaShoitaja{
+            display:none;
+        }
+
+        #seuraavaOverlay {
+            position:absolute;
+            display:none;
+            width:640px;
+            height:480px;
+            z-index:2;
+        }
+
+        #sulkevaOverlay {
+            position:absolute;
+            display:none;
+            width:640px;
+            height:480px;
+            z-index:2;
+        }
+
+        #suljelomakeOverlay {
+            position:absolute;
+            display:none;
+            width:640px;
+            height:480px;
+            z-index:1;
+        }
+
+        #kannettavaLomake {
+            position:absolute;
+            display:none;
+            -webkit-user-drag:none;
+            left:80px;
+            top:70px;
+            z-index:2;
+        }
+
+        #suljeSaavutusKorttiOverlay {
+            position:absolute;
+            display:none;
+            width:640px;
+            height:480px;
+            z-index:1;
+        }
+
+        #saavutuskortti {
+            position:absolute;
+            display:none;
+            -webkit-user-drag:none;
+            left:225px;
+            top:50px;
+            z-index:2;
+        }
+
+        #suljeValintaIkkunaOverlay {
+            position:absolute;
+            display:none;
+            width:640px;
+            height:480px;
+            z-index:1;
+        }
+
+        #valintaboksiTausta {
+            position:absolute;
+            display:none;
+            background-color: #33ccff;
+            width:200px;
+            height:100px;
+            color:;
+            left:220px;
+            top:20px;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        #empty1 {
+            position:absolute;
+            display:none;
+            left:250px;
+            top:36px;
+            z-index: 2;
+        }
+
+        #empty2 {
+            position:absolute;
+            display:none;
+            left:300px;
+            top:36px;
+            z-index: 2;
+        }
+
+
